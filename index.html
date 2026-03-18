@@ -153,8 +153,14 @@
             </div>
             <br>
             <p style="font-size: 15px;">
-              We conduct experiments on the three datasets MegaScenes, DTU, and RE10K and evaluate consistency using two metrics: <i>next</i> metric, which assesses consistency with neighboring viewpoints, and <i>first</i> metric, which measures consistency with the input view. 
-              Additionally, to evaluate camera accuracy, a crucial aspect of novel view synthesis, we report the accuracy of camera extrinsic parameters using Frobenius Norm, Rotation Angle Difference, and Angular Consistency.  
+              We compute PSNR, SSIM, and LPIPS against ground truth frames, use FVD, FID and VBench score to measure overall video quality.
+              We select 8 relevant dimensions for VBench: I2V Subject, I2V Background, Subject Consistency, Background Consistency, Motion Smoothness, Aesthetic Quality and Imaging Quality.
+              Semantic fidelity is measured by X-CLIP text-to-video similarity, which compares prompt and generated video embeddings. 
+              For the video visual question answering (VQA) score, we average over 6 different QA models to reduce variance.
+              Frame consistency is further evaluated with LPIPS-<i>frames</i> and CLIPSIM-<i>frames</i>, which average similarities between adjacent frames following prior works.
+              As automatic measurements are unreliable to properly evaluate our target qualities, semantic fidelity and pace stability, we run a user study on 10\% of the video samples, focusing on 81-frame videos.
+              As shown above, our method improves both semantic fidelity and frame consistency. 
+              Also, our method attains the highest human-rated semantic fidelity and pace stability. 
             </p>
           </div>
           <br>
@@ -167,20 +173,122 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h4 class="title is-2">Qualitative Results</h4>
-          <div class="content has-text-justified">
-            <br>
-            <div class="centerImage">
-              <img src="./static/images/spiral.gif" alt="spiral" width="100%">
+        <br>
+
+        <div class="content has-text-justified">
+          <style>
+            .qual-results-wrapper {
+              width: 100%;
+              overflow-x: auto;
+            }
+
+            .qual-header-row,
+            .qual-row {
+              display: grid;
+              grid-template-columns: repeat(6, 1fr);
+              column-gap: 14px;
+            }
+
+            .qual-header-row {
+              margin-bottom: 10px;
+              align-items: end;
+            }
+
+            .qual-header {
+              text-align: center;
+              font-size: 15px;
+              font-weight: 700;
+            }
+
+            .qual-header.ours {
+              font-weight: 800;
+            }
+
+            .qual-row {
+              margin-bottom: 18px;
+            }
+
+            .qual-video {
+              width: 100%;
+              height: auto;
+              display: block;
+              border-radius: 8px;
+              background: #000;
+            }
+
+            @media screen and (max-width: 768px) {
+              .qual-header-row,
+              .qual-row {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 12px;
+              }
+
+              .qual-header {
+                font-size: 13px;
+              }
+            }
+          </style>
+
+          <div class="qual-results-wrapper">
+            <div class="qual-header-row">
+              <div class="qual-header">TRF</div>
+              <div class="qual-header">ViBiDSampler</div>
+              <div class="qual-header">GI</div>
+              <div class="qual-header">FCVG</div>
+              <div class="qual-header">Wan</div>
+              <div class="qual-header ours">Ours</div>
             </div>
-            <br>
-            <p style="font-size: 15px;">
-              
-            </p>
-            <br>
-            <br>
-          </div>
+
+            <!-- Row 1 -->
+            <div class="qual-row">
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/1/trf.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/1/vibidsampler.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/1/gi.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/1/fcvg.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/1/wan.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/1/ours.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="qual-row">
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/2/trf.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/2/vibidsampler.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/2/gi.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/2/fcvg.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/2/wan.mp4" type="video/mp4">
+              </video>
+              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="./static/videos/2/ours.mp4" type="video/mp4">
+              </video>
+            </div>
+
+
+
+          <br>
+        </div>
       </div>
     </div>
   </div>
