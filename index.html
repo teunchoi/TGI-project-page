@@ -171,7 +171,7 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h4 class="title is-2">Qualitative Results</h4>
@@ -188,17 +188,17 @@
             .qual-row {
               display: grid;
               grid-template-columns: repeat(6, 1fr);
-              column-gap: 14px;
+              column-gap: 16px;
             }
 
             .qual-header-row {
-              margin-bottom: 10px;
+              margin-bottom: 12px;
               align-items: end;
             }
 
             .qual-header {
               text-align: center;
-              font-size: 15px;
+              font-size: 16px;
               font-weight: 700;
             }
 
@@ -207,26 +207,34 @@
             }
 
             .qual-row {
-              margin-bottom: 18px;
+              margin-bottom: 22px;
             }
 
             .qual-video {
               width: 100%;
-              height: auto;
+              aspect-ratio: 16 / 9;
+              object-fit: cover;
               display: block;
               border-radius: 8px;
               background: #000;
             }
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 1024px) {
               .qual-header-row,
               .qual-row {
                 grid-template-columns: repeat(3, 1fr);
                 row-gap: 12px;
               }
+            }
 
+            @media screen and (max-width: 768px) {
               .qual-header {
                 font-size: 13px;
+              }
+
+              .qual-header-row,
+              .qual-row {
+                column-gap: 10px;
               }
             }
           </style>
@@ -284,8 +292,7 @@
                 <source src="./static/videos/2/ours.mp4" type="video/mp4">
               </video>
             </div>
-
-
+          </div>
 
           <br>
         </div>
