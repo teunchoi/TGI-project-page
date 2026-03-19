@@ -171,7 +171,7 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-widescreen">
+  <div class="container is-fluid" style="max-width: 1800px;">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h4 class="title is-2">Qualitative Results</h4>
@@ -188,17 +188,17 @@
             .qual-row {
               display: grid;
               grid-template-columns: repeat(6, 1fr);
-              column-gap: 16px;
+              column-gap: 20px;
             }
 
             .qual-header-row {
-              margin-bottom: 12px;
+              margin-bottom: 14px;
               align-items: end;
             }
 
             .qual-header {
               text-align: center;
-              font-size: 16px;
+              font-size: 17px;
               font-weight: 700;
             }
 
@@ -206,8 +206,18 @@
               font-weight: 800;
             }
 
+            .qual-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .qual-row-block {
+              margin-bottom: 28px;
+            }
+
             .qual-row {
-              margin-bottom: 22px;
+              margin-bottom: 10px;
             }
 
             .qual-video {
@@ -215,15 +225,22 @@
               aspect-ratio: 16 / 9;
               object-fit: cover;
               display: block;
-              border-radius: 8px;
+              border-radius: 10px;
               background: #000;
             }
 
-            @media screen and (max-width: 1024px) {
+            .qual-caption {
+              text-align: center;
+              font-size: 15px;
+              margin-top: 8px;
+              line-height: 1.4;
+            }
+
+            @media screen and (max-width: 1400px) {
               .qual-header-row,
               .qual-row {
                 grid-template-columns: repeat(3, 1fr);
-                row-gap: 12px;
+                row-gap: 14px;
               }
             }
 
@@ -235,6 +252,10 @@
               .qual-header-row,
               .qual-row {
                 column-gap: 10px;
+              }
+
+              .qual-caption {
+                font-size: 14px;
               }
             }
           </style>
@@ -250,93 +271,151 @@
             </div>
 
             <!-- Row 1 -->
-            <div class="qual-row">
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/1/trf.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/1/vibidsampler.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/1/gi.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/1/fcvg.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/1/wan.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/1/ours.mp4" type="video/mp4">
-              </video>
+            <div class="qual-row-block">
+              <div class="qual-row">
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/1/trf.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/1/vibidsampler.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/1/gi.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/1/fcvg.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/1/wan.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/1/ours.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <p class="qual-caption">Row 1 설명 텍스트를 여기에 넣으세요.</p>
             </div>
 
             <!-- Row 2 -->
-            <div class="qual-row">
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/2/trf.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/2/vibidsampler.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/2/gi.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/2/fcvg.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/2/wan.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/2/ours.mp4" type="video/mp4">
-              </video>
+            <div class="qual-row-block">
+              <div class="qual-row">
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/2/trf.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/2/vibidsampler.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/2/gi.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/2/fcvg.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/2/wan.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/2/ours.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <p class="qual-caption">Row 2 설명 텍스트를 여기에 넣으세요.</p>
             </div>
-          </div>
 
             <!-- Row 3 -->
-            <div class="qual-row">
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/3/trf.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/3/vibidsampler.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/3/gi.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/3/fcvg.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/3/wan.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/3/ours.mp4" type="video/mp4">
-              </video>
+            <div class="qual-row-block">
+              <div class="qual-row">
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/3/trf.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/3/vibidsampler.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/3/gi.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/3/fcvg.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/3/wan.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/3/ours.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <p class="qual-caption">Row 3 설명 텍스트를 여기에 넣으세요.</p>
             </div>
-          </div>
-          
-          <!-- Row 4 -->
-            <div class="qual-row">
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/4/trf.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/4/vibidsampler.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/4/gi.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/4/fcvg.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/4/wan.mp4" type="video/mp4">
-              </video>
-              <video class="qual-video" autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/4/ours.mp4" type="video/mp4">
-              </video>
+
+            <!-- Row 4 -->
+            <div class="qual-row-block">
+              <div class="qual-row">
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/4/trf.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/4/vibidsampler.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/4/gi.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/4/fcvg.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/4/wan.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="qual-item">
+                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/4/ours.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <p class="qual-caption">Row 4 설명 텍스트를 여기에 넣으세요.</p>
             </div>
           </div>
 
@@ -346,7 +425,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- <section class="section">
   <div class="container is-max-desktop">
