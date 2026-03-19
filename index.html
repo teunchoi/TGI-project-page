@@ -203,9 +203,26 @@
             }
 
             .qual-header.ours {
-              font-weight: 800;
+              font-weight: 900;
+              color: #c62828;
+              background: #fff1f1;
+              border: 2px solid #f3b3b3;
+              border-radius: 10px;
+              padding: 6px 10px;
+            }
+            .qual-header.ours {
+              font-weight: 900;
+              color: #c62828;
+              background: #fff1f1;
+              border: 2px solid #f3b3b3;
+              border-radius: 10px;
+              padding: 6px 10px;
             }
 
+            .ours-video {
+              border: 3px solid #d32f2f;
+              box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.12);
+            }
             .qual-item {
               display: flex;
               flex-direction: column;
@@ -299,7 +316,7 @@
                   </video>
                 </div>
                 <div class="qual-item">
-                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                  <video class="qual-video ours-video" autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/1_ours.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -336,7 +353,7 @@
                   </video>
                 </div>
                 <div class="qual-item">
-                  <video class="qual-video" autoplay muted loop playsinline preload="metadata">
+                  <video class="qual-video ours-video" autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/2_ours.mp4" type="video/mp4">
                   </video>
                 </div>
